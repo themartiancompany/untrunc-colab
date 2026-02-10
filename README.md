@@ -25,7 +25,9 @@ Use untrunc from a Google Colab instance.
 
 You can run the program at this repo
 from colab through the following
-url:
+url
+
+https://colab.research.google.com/github/themartiancompany/untrunc-colab/blob/hurr/untrunc-colab/untrunc-colab.ipynb
 
 # Source availability
 
