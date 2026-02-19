@@ -92,6 +92,7 @@ _corrupt="${2}"
 _compress="${3}"
 
 untrunc \
+  -sv \
   "${_okay}" \
   "${_corrupt}"
 
@@ -99,7 +100,7 @@ if [[ "${_compress}" == "true" ]]; then
   vidscale \
    -m \
      "quality" \
-   "${_corrupt}_fixed.mp4" \
+   "${_corrupt}_fixed-sv.mp4" \
    "${_corrupt}_compressed.mp4" \
    1
 fi
@@ -114,7 +115,7 @@ _f.write(
 !sha256sum "${_corrupt_file}"
 
 !chmod 755 /usr/bin/untrunc-colab
-!bash untrunc-colab "${_okay_file}" "${_corrupt_file}"
+!bash untrunc-colab "${_okay_file}" "${_corrupt_file}" "${_compress_file}"
 
 # @markdown ### Source availability
 
