@@ -68,6 +68,17 @@ if [[ "${_untrunc}" == "" ]]; then
     "ffmpeg"
   git \
     clone \
+    "https://github.com/themartiancompany/crash-bash"
+  cd \
+    "crash-bash"
+  make \
+    DESTDIR="/" \
+    PREFIX="/usr" \
+    install
+  cd \
+    ".."
+  git \
+    clone \
     "https://github.com/themartiancompany/media-tools"
   cd \
     "media-tools"
@@ -75,6 +86,8 @@ if [[ "${_untrunc}" == "" ]]; then
     DESTDIR="/" \
     PREFIX="/usr" \
     install
+  cd \
+    ".."
   git \
     clone \
     "https://github.com/anthwlock/untrunc"
@@ -85,6 +98,8 @@ if [[ "${_untrunc}" == "" ]]; then
     cp \
       "untrunc" \
       "/usr/bin"
+  cd \
+    ".."
 fi
 
 _okay="${1}"
